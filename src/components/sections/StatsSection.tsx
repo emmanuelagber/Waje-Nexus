@@ -27,7 +27,7 @@ const STATS: StatItem[] = [
 
 export function StatsSection() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="pt-16 sm:pt-20 pb-6 sm:pb-8 bg-[#F7F7F7]">
       <Container>
         <div className="mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900">These could be your numbers.</h2>

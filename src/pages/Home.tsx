@@ -18,7 +18,8 @@ import automationEngineImg from '@/assets/automationEngine.png';
 function HeroSection() {
   return (
     <section className="relative pt-12 pb-0 overflow-hidden">
-      <Container>
+      {/* <Container> */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -68,27 +69,41 @@ function HeroSection() {
         </motion.div>
 
         {/* Dashboard screenshot */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-10 relative"
-        >
-          <div className="mx-auto max-w-5xl">
-            {/* Glowing background */}
-            <div className="absolute inset-0 -top-10 rounded-3xl bg-green-50 blur-3xl opacity-50 pointer-events-none" />
-            <div className="relative rounded-2xl border border-neutral-100 shadow-2xl shadow-neutral-200/60 overflow-hidden bg-white">
-              <img
-                src={heroDashboard}
-                alt="WajeNexus Dashboard"
-                className="w-full h-auto"
-                loading="eager"
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-white via-white/60 to-transparent pointer-events-none" />
+        <div className="bg-[#F4FBF1] rounded-sm py-5">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mt-10 relative "
+          >
+            <div className="mx-auto max-w-5xl relative">
+              {/* Glowing background */}
+              <div className="absolute inset-0 -top-10 rounded-3xl bg-green-50 blur-3xl opacity-50 pointer-events-none" />
+           <div
+  className="
+    relative
+    rounded-2xl
+    border-4 border-black
+    shadow-2xl shadow-neutral-200/60
+    overflow-hidden
+    bg-white
+    
+  "
+>
+  <img
+    src={heroDashboard}
+    alt="WajeNexus Dashboard"
+    className="w-full h-auto rounded-xl"
+    loading="eager"
+  />
+
+  <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/60 to-transparent pointer-events-none" />
+</div>
             </div>
-          </div>
-        </motion.div>
-      </Container>
+          </motion.div>
+      </div>
+      </div>
+      {/* </Container> */}
     </section>
   );
 }
@@ -220,7 +235,7 @@ function BeyondCRM() {
 /* ── Feature Grid (Home Overview) ──────────────────────────────── */
 function FeatureOverview() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-16 sm:py-20 bg-[#F7F7F7]">
       <Container>
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 bg-white text-xs font-semibold tracking-widest text-[#000] uppercase mb-4 shadow-sm">
@@ -336,7 +351,7 @@ function FeatureOverview() {
 }
 
 /* ── Committed Section ──────────────────────────────────────────── */
-function CommittedSection() {
+export function CommittedSection() {
   const pillars = [
     {
       title: 'Free Setup, Training & Installation',
@@ -374,12 +389,14 @@ export function Home() {
   return (
     <>
       <HeroSection />
-      <TrustedBy />
+      <div className="relative z-20 -mt-16 sm:-mt-24 bg-white">
+        <TrustedBy />
+      </div>
       <BeyondCRM />
       <ProblemSection />
       <FeatureOverview />
       <StatsSection />
-      <CommittedSection />
+      {/* <CommittedSection /> */}
       <CTABanner />
     </>
   );
