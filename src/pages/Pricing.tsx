@@ -7,56 +7,52 @@ import { cn } from '@/utils/cn';
 
 const PLANS = [
   {
-    name: 'Starter',
-    price: { monthly: '₦150,000', annual: '₦120,000' },
-    description: 'For small teams getting started with a unified customer workspace.',
+    name: 'Starter Tier',
+    description: 'Ideal for small businesses, freelancers, or startups just beginning to manage customer relationships.',
+    price: { monthly: '$29', yearly: '$23' },
     features: [
-      'Up to 10 agents',
-      'Omnichannel inbox (WhatsApp, Email, SMS)',
-      'Basic ticket management',
-      'Standard reporting dashboard',
-      'AI chatbot (up to 500 conversations/mo)',
-      'Email support',
-      'Standard onboarding',
+      '360° Customer Relationship Mapping for up to 1,000 contacts.',
+      'Basic Visual Sales Pipelines with up to 5 custom stages.',
+      'Limited Smart Workflow Automation (up to 10 rules).',
+      'Basic Real-Time Analytics (standard KPIs only, no AI forecasting).',
+      'Omnichannel Integration with up to 5 apps (e.g., Gmail, Slack).',
+      'Up to 2 users.',
+      '5GB storage.',
     ],
-    cta: 'Start Free Trial',
     highlighted: false,
   },
   {
-    name: 'Growth',
-    price: { monthly: '₦350,000', annual: '₦280,000' },
-    description: 'For growing teams that need AI-powered support and deeper analytics.',
+    name: 'Professional Tier',
+    description: 'Designed for growing teams needing more automation and insights.',
+    price: { monthly: '$79', yearly: '$63' },
     features: [
-      'Up to 50 agents',
-      'All Starter features',
-      'Inbound & outbound calling (VoIP)',
-      'Advanced AI routing & triage',
-      'Sales pipeline CRM',
-      'Campaign automation (email + WhatsApp)',
-      'Workforce scheduling',
-      'CSAT & FCR dashboards',
-      'Priority support + dedicated CSM',
+      'All Starter features.',
+      'Unlimited 360° Customer Relationship Mapping for up to 10,000 contacts.',
+      'Advanced Visual Sales Pipelines with unlimited custom stages and bottleneck alerts.',
+      'Full Smart Workflow Automation (unlimited rules, including lead nurturing).',
+      'Real-Time Analytics & Forecasting with AI-driven insights.',
+      'Omnichannel Integration with up to 50 apps (plus API access for custom integrations).',
+      'Up to 10 users.',
+      '50GB storage.',
+      'Team collaboration tools (e.g., shared dashboards, role-based access).',
     ],
-    cta: 'Start Free Trial',
     highlighted: true,
   },
   {
-    name: 'Enterprise',
-    price: { monthly: 'Custom', annual: 'Custom' },
-    description: 'For large organizations with complex requirements and compliance needs.',
+    name: 'Enterprise Tier',
+    description: 'Tailored for large organizations requiring infinite scalability, deep customization.',
+    price: { monthly: '$149', yearly: '$119' },
     features: [
-      'Unlimited agents',
-      'All Growth features',
-      'Custom SLA & uptime guarantees',
-      'Dedicated infrastructure options',
-      'Advanced security & audit logging',
-      'Custom API integrations',
-      'AI-powered quality monitoring',
-      'Executive reporting suite',
-      '24/7 in-house support + SLA',
-      'White-glove onboarding',
+      'All Professional features.',
+      'Unlimited contacts and users.',
+      'Custom Visual Sales Pipelines with AI-driven optimization.',
+      'Advanced Smart Workflow Automation with multi-department branching and integrations.',
+      'Enterprise Real-Time Analytics & Forecasting with custom KPIs, predictive modeling, and exportable reports.',
+      'Unlimited Omnichannel Integration (500+ apps, full API, and webhook support).',
+      'Unlimited storage.',
+      'Advanced security (e.g., audit logs, SSO, compliance certifications like GDPR/HIPAA).',
+      'Dedicated account manager, priority phone support, and custom onboarding/training.',
     ],
-    cta: 'Talk to Sales',
     highlighted: false,
   },
 ];
@@ -82,21 +78,21 @@ const FAQ = [
   },
   {
     id: '4',
-    question: 'How does per-agent pricing work?',
+    question: 'How does per-user pricing work?',
     answer:
-      'You pay for active named agents on your account. Supervisors and admins are included at no extra cost. You can add or remove agent seats at any time.',
+      'You pay for active named users on your account. Supervisors and admins are included at no extra cost. You can add or remove user seats at any time.',
   },
   {
     id: '5',
     question: 'What payment methods do you accept?',
     answer:
-      'We accept bank transfers, card payments, and direct debit for Nigerian businesses. Enterprise customers can negotiate custom payment terms.',
+      'We accept bank transfers, card payments, and direct debit. Enterprise customers can negotiate custom payment terms.',
   },
   {
     id: '6',
-    question: 'Is pricing in Naira?',
+    question: 'What currency is pricing in?',
     answer:
-      'Yes. All pricing for Nigerian customers is in Naira (₦) to protect you from exchange rate volatility — one of the key reasons African businesses choose WajeNexus over global alternatives.',
+      'Plans are listed in US dollars per user. For Nigerian customers, we bill the equivalent in Naira (₦) at checkout, shielding you from exchange rate volatility — one of the key reasons African businesses choose WajeNexus over global alternatives.',
   },
 ];
 
@@ -139,140 +135,104 @@ function FAQSection() {
 }
 
 export function Pricing() {
-  const [annual, setAnnual] = useState(false);
+  const [yearly, setYearly] = useState(false);
 
   return (
     <>
       {/* Hero */}
-      <section className="pt-10 pb-8">
+      <section className="pt-12 pb-6">
         <Container size="md">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-200 bg-white text-xs font-semibold tracking-widest text-neutral-500 uppercase mb-6 shadow-sm">
-              <span>✦</span> PRICING
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 leading-tight mb-4">
-              Simple pricing.<br />
-              <span className="text-green-700">No hidden fees.</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 leading-[1.1] mb-6">
+              Choose a plan that&rsquo;s right for you
             </h1>
-            <p className="text-lg text-neutral-500 mb-6 max-w-xl mx-auto">
-              All plans include free setup, training, and onboarding. Pay in Naira and never worry about exchange rate
-              volatility.
-            </p>
 
-            {/* Toggle */}
-            <div className="inline-flex items-center gap-3 p-1 bg-neutral-100 rounded-xl mb-2">
+            {/* Monthly / Yearly toggle */}
+            <div className="inline-flex items-center gap-1 p-1 bg-neutral-100 rounded-full">
               <button
-                onClick={() => setAnnual(false)}
+                onClick={() => setYearly(false)}
                 className={cn(
-                  'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
-                  !annual ? 'bg-white text-neutral-900 shadow-sm' : 'text-neutral-500'
+                  'px-5 py-2 rounded-full text-sm font-medium transition-colors',
+                  !yearly ? 'bg-white text-neutral-900 shadow-sm' : 'text-neutral-500 hover:text-neutral-700'
                 )}
               >
                 Monthly
               </button>
               <button
-                onClick={() => setAnnual(true)}
+                onClick={() => setYearly(true)}
                 className={cn(
-                  'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
-                  annual ? 'bg-white text-neutral-900 shadow-sm' : 'text-neutral-500'
+                  'px-5 py-2 rounded-full text-sm font-medium transition-colors',
+                  yearly ? 'bg-white text-neutral-900 shadow-sm' : 'text-neutral-500 hover:text-neutral-700'
                 )}
               >
-                Annual
+                Yearly
               </button>
             </div>
-            {annual && (
-              <p className="text-xs text-green-700 font-semibold mt-1">Save ~20% with annual billing</p>
-            )}
           </div>
         </Container>
       </section>
 
       {/* Pricing cards */}
-      <section className="py-4 pb-16">
+      <section className="pb-16">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
             {PLANS.map((plan) => (
               <div
                 key={plan.name}
                 className={cn(
-                  'rounded-2xl border p-7 flex flex-col',
+                  'rounded-3xl p-8 flex flex-col',
                   plan.highlighted
-                    ? 'bg-neutral-900 border-neutral-900 shadow-xl shadow-neutral-900/20'
-                    : 'bg-white border-neutral-100'
+                    ? 'bg-green-800 text-white shadow-2xl shadow-green-900/20 md:-my-4 md:py-12'
+                    : 'bg-white border border-neutral-200'
                 )}
               >
+                {/* Name + description */}
+                <h3 className={cn('text-xl font-bold mb-2', plan.highlighted ? 'text-white' : 'text-neutral-900')}>
+                  {plan.name}
+                </h3>
+                <p className={cn('text-sm leading-relaxed mb-6', plan.highlighted ? 'text-green-50/80' : 'text-neutral-500')}>
+                  {plan.description}
+                </p>
+
+                {/* Price */}
                 <div className="mb-6">
-                  <div className="flex items-center justify-between mb-1">
-                    <h3
-                      className={cn(
-                        'font-bold text-lg',
-                        plan.highlighted ? 'text-white' : 'text-neutral-900'
-                      )}
-                    >
-                      {plan.name}
-                    </h3>
-                    {plan.highlighted && (
-                      <span className="px-2.5 py-1 text-xs font-semibold bg-green-700 text-white rounded-full">
-                        Most Popular
-                      </span>
-                    )}
-                  </div>
-                  <p
-                    className={cn(
-                      'text-sm mb-4',
-                      plan.highlighted ? 'text-neutral-400' : 'text-neutral-500'
-                    )}
-                  >
-                    {plan.description}
-                  </p>
-                  <p
-                    className={cn(
-                      'text-4xl font-extrabold',
-                      plan.highlighted ? 'text-white' : 'text-neutral-900'
-                    )}
-                  >
-                    {annual ? plan.price.annual : plan.price.monthly}
-                    {plan.price.monthly !== 'Custom' && (
-                      <span
-                        className={cn(
-                          'text-base font-normal ml-1',
-                          plan.highlighted ? 'text-neutral-400' : 'text-neutral-400'
-                        )}
-                      >
-                        /mo
-                      </span>
-                    )}
-                  </p>
+                  <span className={cn('text-5xl font-extrabold', plan.highlighted ? 'text-white' : 'text-neutral-900')}>
+                    {yearly ? plan.price.yearly : plan.price.monthly}
+                  </span>
+                  <span className={cn('text-base font-normal ml-1.5', plan.highlighted ? 'text-green-50/70' : 'text-neutral-400')}>
+                    / User
+                  </span>
                 </div>
 
-                <ul className="space-y-2.5 flex-1 mb-7">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm">
-                      <Check
-                        size={15}
-                        className={cn(
-                          'mt-0.5 shrink-0',
-                          plan.highlighted ? 'text-green-400' : 'text-green-700'
-                        )}
-                      />
-                      <span className={plan.highlighted ? 'text-neutral-300' : 'text-neutral-600'}>
-                        {f}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
+                {/* CTA — directly under price */}
                 <Link
                   to="/contact"
                   className={cn(
-                    'block text-center py-3 text-sm font-semibold rounded-xl transition-colors',
+                    'block text-center py-3.5 text-sm font-semibold rounded-full border transition-colors mb-8',
                     plan.highlighted
-                      ? 'bg-white text-neutral-900 hover:bg-neutral-100'
-                      : 'bg-neutral-900 text-white hover:bg-neutral-800'
+                      ? 'bg-white text-green-800 border-white hover:bg-green-50'
+                      : 'bg-white text-green-700 border-green-600 hover:bg-green-50'
                   )}
                 >
-                  {plan.cta}
+                  Get Started Now
                 </Link>
+
+                {/* Features */}
+                <ul className="space-y-4">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-3 text-sm">
+                      <span
+                        className={cn(
+                          'mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0',
+                          plan.highlighted ? 'bg-white/15' : 'bg-green-50'
+                        )}
+                      >
+                        <Check size={12} strokeWidth={3} className={plan.highlighted ? 'text-white' : 'text-green-700'} />
+                      </span>
+                      <span className={plan.highlighted ? 'text-green-50/90' : 'text-neutral-600'}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

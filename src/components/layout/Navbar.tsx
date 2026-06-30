@@ -21,7 +21,7 @@ export function Navbar() {
       )}>
         <div
           className={cn(
-            'w-full max-w-7xl grid grid-cols-3 items-center h-[72px]  px-3 sm:px-10 rounded-[10px] border-[0.2px] transition-all duration-300 shadow-md',
+            'w-full max-w-7xl flex items-center justify-between gap-4 h-[72px]  px-3 sm:px-10 rounded-[10px] border-[0.2px] transition-all duration-300 shadow-md',
             'backdrop-blur-md',
             scrolled
               ? 'bg-white/90 shadow-lg shadow-black/6 backdrop-blur-xl border-neutral-300'
@@ -37,7 +37,7 @@ export function Navbar() {
           </div>
 
           {/* Center: nav links */}
-          <nav className="hidden md:flex items-center gap-4 justify-self-center">
+          <nav className="hidden md:flex items-center gap-4">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
@@ -72,7 +72,7 @@ export function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden justify-self-end p-2 rounded-lg text-neutral-600 hover:bg-neutral-100 transition-colors"
+            className="md:hidden ml-auto p-2 rounded-lg text-neutral-600 hover:bg-neutral-100 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
