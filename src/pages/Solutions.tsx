@@ -3,6 +3,7 @@ import { CheckCircle } from 'lucide-react';
 import { Container } from '@/components/layout/Container';
 import { CTABanner } from '@/components/sections/CTABanner';
 import { Link } from 'react-router-dom';
+import vector from '@/assets/Vector.png';
 
 const INDUSTRIES = [
   {
@@ -75,7 +76,7 @@ export function Solutions() {
         <Container size="md">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-200 bg-white text-xs font-semibold tracking-widest text-neutral-500 uppercase mb-6 shadow-sm">
-              <span>✦</span> SOLUTIONS
+              <img src={vector} alt="" className="w-3.5 h-3.5" /> SOLUTIONS
             </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 leading-tight mb-6">
               Built for your industry.<br />
@@ -102,13 +103,14 @@ export function Solutions() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="rounded-2xl border border-neutral-100 bg-white p-8 sm:p-10"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                  <div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+                  {/* Text */}
+                  <div className="flex flex-col">
                     <p className="text-xs font-bold tracking-widest text-green-700 uppercase mb-3">{industry.label}</p>
-                    <h2 className="text-2xl font-bold text-neutral-900 mb-4 leading-tight">{industry.heading}</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4 leading-tight">{industry.heading}</h2>
                     <p className="text-neutral-600 leading-relaxed mb-6">{industry.description}</p>
                     {industry.clients.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mb-8">
                         {industry.clients.map((client) => (
                           <span
                             key={client}
@@ -119,8 +121,19 @@ export function Solutions() {
                         ))}
                       </div>
                     )}
+                    <div className="mt-auto pt-2">
+                      <Link
+                        to="/contact"
+                        className="inline-block px-5 py-2.5 text-sm font-semibold text-white bg-neutral-900 rounded-xl hover:bg-neutral-800 transition-colors"
+                      >
+                        Talk to a specialist
+                      </Link>
+                    </div>
                   </div>
-                  <div>
+
+                  {/* Capabilities panel */}
+                  <div className="rounded-2xl bg-[#F4FBF1] p-6 sm:p-8">
+                    <p className="text-sm font-semibold text-neutral-900 mb-4">What you get</p>
                     <ul className="space-y-3">
                       {industry.capabilities.map((cap) => (
                         <li key={cap} className="flex items-start gap-3 text-sm text-neutral-700">
@@ -129,14 +142,6 @@ export function Solutions() {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-6">
-                      <Link
-                        to="/contact"
-                        className="inline-block px-5 py-2.5 text-sm font-semibold text-white bg-neutral-900 rounded-xl hover:bg-neutral-800 transition-colors"
-                      >
-                        Talk to a specialist
-                      </Link>
-                    </div>
                   </div>
                 </div>
               </motion.div>

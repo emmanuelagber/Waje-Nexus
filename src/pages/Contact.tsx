@@ -24,18 +24,18 @@ export function Contact() {
   return (
     <section className="py-16 sm:py-20">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           {/* Left side */}
-          <div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 mb-4 leading-tight">
+          <div className="flex flex-col">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 mb-5 leading-tight">
               Get in touch <br />with the team
             </h1>
-            <p className="text-neutral-500 leading-relaxed mb-10">
+            <p className="text-neutral-500 leading-relaxed">
               For faster assistance, please use your business email and include a detailed note. We look forward to
               receiving your messages!
             </p>
 
-            <div className="space-y-6">
+            <div className="mt-10 lg:mt-auto pt-8 border-t border-neutral-200">
               <div>
                 <p className="font-semibold text-neutral-900 mb-3">
                   To make requests for further information, contact us via
@@ -83,7 +83,7 @@ export function Contact() {
           </div>
 
           {/* Right side — form */}
-          <div className="bg-white border border-neutral-100 rounded-2xl p-8 shadow-sm">
+          <div className="bg-white border border-neutral-200 rounded-2xl p-6 sm:p-8 shadow-sm">
             {submitted ? (
               <div className="text-center py-12">
                 <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-4">
