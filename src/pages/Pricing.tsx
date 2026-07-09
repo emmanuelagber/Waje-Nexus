@@ -195,14 +195,14 @@ export function Pricing() {
                 </p>
 
                 {/* Price */}
-                <div className="mb-6">
+                {/* <div className="mb-6">
                   <span className={cn('text-5xl font-extrabold', plan.highlighted ? 'text-white' : 'text-neutral-900')}>
                     {yearly ? plan.price.yearly : plan.price.monthly}
                   </span>
                   <span className={cn('text-base font-normal ml-1.5', plan.highlighted ? 'text-green-50/70' : 'text-neutral-400')}>
                     / User
                   </span>
-                </div>
+                </div> */}
 
                 {/* CTA — directly under price */}
                 <Link

@@ -4,7 +4,7 @@ import { Play, CheckCircle, X, Check, CircleDot } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { CTABanner } from "@/components/sections/CTABanner";
-import { TrustedBy } from "@/components/sections/TrustedBy";
+// import { TrustedBy } from "@/components/sections/TrustedBy";
 import heroDashboard from "@/assets/wajenexus-dashboard.png";
 import aiPng from "@/assets/Group.png";
 import vector from "@/assets/Vector.png";
@@ -459,9 +459,9 @@ export function Home() {
   return (
     <>
       <HeroSection />
-      <div className="relative z-20 -mt-16 sm:-mt-24 bg-white">
+      {/* <div className="relative z-20 -mt-16 sm:-mt-24 bg-white">
         <TrustedBy />
-      </div>
+      </div> */}
       <BeyondCRM />
       <ProblemSection />
       <FeatureOverview />
