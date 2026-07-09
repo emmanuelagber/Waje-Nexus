@@ -175,14 +175,14 @@ export function Pricing() {
       {/* Pricing cards */}
       <section className="pb-16">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
             {PLANS.map((plan) => (
               <div
                 key={plan.name}
                 className={cn(
-                  'rounded-3xl p-8 flex flex-col',
+                  'rounded-3xl p-8 flex flex-col h-full',
                   plan.highlighted
-                    ? 'bg-green-800 text-white shadow-2xl shadow-green-900/20 md:-my-4 md:py-12'
+                    ? 'bg-green-800 text-white shadow-2xl shadow-green-900/20'
                     : 'bg-white border border-neutral-200'
                 )}
               >
