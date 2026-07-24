@@ -13,8 +13,8 @@ interface CTABannerProps {
 export function CTABanner({
   heading = 'Ready to Transform your Customer Operations?',
   subheading = 'One platform to replace every disconnected tool your team is working around, and the local support to make it stick.',
-  primaryCTA = { label: 'Start Free Trial', href: '/contact' },
-  secondaryCTA = { label: 'Watch 2-min Demo', href: '#' },
+  primaryCTA = { label: 'Book a Demo', href: '/contact' },
+  secondaryCTA = { label: 'Watch 2 minutes video', href: '#' },
 }: CTABannerProps) {
   return (
     <section className="pt-0 pb-10 px-4 sm:px-6 lg:px-8 ">
