@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
   size?: number | string;
@@ -32,8 +32,7 @@ export const YoutubeIcon = ({ size = 24, ...props }: IconProps) => (
 
 
 const productLinks = [
-  { label: 'Platform', href: '/platform' },
-  { label: 'AI Agents', href: '/ai-agents' },
+  { label: 'Features', href: '/features' },
   { label: 'Integrations', href: '/integrations' },
   { label: 'API Docs', href: '/api-docs' },
   { label: 'Changelog', href: '/changelog' },
@@ -154,7 +153,7 @@ export function Footer() {
         <div className="border-t border-white/10" />
 
         {/* Contact row */}
-        <div className="grid grid-cols-3 gap-8 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8">
 
           {/* Enquiries */}
           <div className="flex flex-col gap-2">
@@ -163,7 +162,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-2 text-sm text-white/60">
               <Mail size={14} className="shrink-0" />
-              <span>info@wajenexus.com</span>
+              <span>sales@wajesmart.com</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-white/60">
               <Phone size={14} className="shrink-0" />
@@ -178,22 +177,11 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-2 text-sm text-white/60">
               <Mail size={14} className="shrink-0" />
-              <span>support@wajenexus.com</span>
+              <span>sales@wajesmart.com</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-white/60">
               <Phone size={14} className="shrink-0" />
-              <span>09135823748</span>
-            </div>
-          </div>
-
-          {/* Address */}
-          <div className="flex flex-col gap-2">
-            <p className="text-xs font-semibold text-white uppercase tracking-wide">
-              Address
-            </p>
-            <div className="flex items-start gap-2 text-sm text-white/60">
-              <MapPin size={14} className="shrink-0 mt-0.5" />
-              <span>16a George Omonubi St, Maroko, Lekki 106104, Lagos</span>
+              <span>+2349135823748</span>
             </div>
           </div>
         </div>
