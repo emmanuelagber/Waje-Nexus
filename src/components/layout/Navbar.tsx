@@ -12,7 +12,8 @@ export function Navbar() {
   const scrolled = useScrolled(10);
   const location = useLocation();
 
-  const isActive = (href: string) => location.pathname === href;
+  // Compare only the path portion so hash links (e.g. "/home#features") still match.
+  const isActive = (href: string) => location.pathname === href.split('#')[0];
 
   return (
     <>
